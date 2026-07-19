@@ -55,6 +55,35 @@ body {
   z-index: 1;
 }
 
+.company-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.company-brand__logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+}
+
+.company-brand__name {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.company-brand__sub {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -104,6 +133,7 @@ body {
   color: var(--muted);
 }
 
+.videos-section,
 .projects-section {
   margin-top: 28px;
 }
@@ -122,10 +152,31 @@ body {
   color: var(--muted);
 }
 
+.videos-grid,
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+}
+
+.video-card {
+  padding: 16px;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.video-card__title {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 16px;
+  background: #010814;
 }
 
 .project-card {
@@ -236,10 +287,21 @@ body {
     padding: 26px 18px;
   }
 
+  .company-brand {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .company-brand__logo {
+    width: 92px;
+    height: 92px;
+  }
+
   .hero__stats {
     grid-template-columns: 1fr;
   }
 
+  .videos-grid,
   .projects-grid {
     grid-template-columns: 1fr;
   }

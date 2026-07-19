@@ -15,6 +15,12 @@ const works = [
   { title: 'تنفيذ أعمال الإنذار مكين 92 الصحافة', type: 'إنذار' },
 ];
 
+const videos = [
+  { title: 'فيديو 1', src: 'videos/WhatsApp Video 2026-07-19 at 5.08.55 PM.mp4' },
+  { title: 'فيديو 2', src: 'videos/WhatsApp Video 2026-07-19 at 5.08.55 PM (1).mp4' },
+  { title: 'فيديو 3', src: 'videos/WhatsApp Video 2026-07-19 at 5.08.55 PM (2).mp4' },
+];
+
 const images = [
   'شغل/IMG-20260718-WA0003.jpg',
   'شغل/IMG-20260718-WA0004.jpg',
@@ -105,9 +111,28 @@ allocations[12] = 5;
 allocations[13] = 5;
 
 const grid = document.querySelector('#projects-grid');
+const videosGrid = document.querySelector('#videos-grid');
 const lightbox = document.querySelector('#lightbox');
 const lightboxImage = document.querySelector('#lightbox-image');
 const closeLightbox = document.querySelector('#close-lightbox');
+
+videos.forEach((video) => {
+  const card = document.createElement('div');
+  card.className = 'video-card';
+
+  const title = document.createElement('h3');
+  title.className = 'video-card__title';
+  title.textContent = video.title;
+
+  const videoEl = document.createElement('video');
+  videoEl.src = video.src;
+  videoEl.controls = true;
+  videoEl.preload = 'metadata';
+
+  card.appendChild(title);
+  card.appendChild(videoEl);
+  videosGrid.appendChild(card);
+});
 
 let imageCursor = 0;
 
